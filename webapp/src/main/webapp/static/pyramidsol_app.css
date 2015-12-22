@@ -1,0 +1,69 @@
+html, body {
+	margin: 0;
+	padding: 0;
+}
+
+#page-container {
+	width: 1200px;
+	margin: auto;
+	
+	background-image:url('pyramid.jpg');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	
+	/* background: red; */
+}
+
+#controls { 
+	height: 50px;
+		
+	/* background: blue; */
+}
+
+#pyramidDisplay {
+	height: 450px; 
+	width: 600px;
+	position: relative;
+	float: left;
+	
+	/* 	background: orange; */
+}
+
+#talonDisplay {
+	height: 450px;
+	width: 600px;
+	position: relative;
+	float: right;
+	
+	/* background: purple; */
+}
+
+#freeCellDisplay {
+	height: 200px;
+	clear: both;
+	
+}
+
+#deckDisplay {
+	height: 200px;
+	clear: both;
+	
+	/* background: darkgreen; */
+}
+
+.pyramidCard {
+	position: absolute;
+}
+
+.talonCard {
+	position: absolute;
+}
+
+.playingCard {
+
+}
+
+.cardSelected {
+	border: solid 2px yellow;
+}

@@ -1,0 +1,77 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>pyramid-solitaire-webapp</artifactId>
+	<packaging>war</packaging>
+	<name>pyramid-solitaire-war</name>
+
+	<parent>
+		<groupId>com.kschmidt.pyramid-solitaire</groupId>
+		<artifactId>pyramid-solitaire</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.kschmidt.pyramid-solitaire</groupId>
+			<artifactId>pyramid-solitaire-api</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>com.kschmidt.pyramid-solitaire</groupId>
+			<artifactId>pyramid-solitaire-web</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+			</resource>
+			<resource>
+				<directory>src/main/webapp</directory>
+				<includes>
+					<include>WEB-INF/web.xml</include>
+				</includes>
+				<filtering>true</filtering>
+				<targetPath>../jetty</targetPath>
+			</resource>
+		</resources>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<configuration>
+					<webResources>
+						<resource>
+							<directory>src/main/webapp</directory>
+							<includes>
+								<include>WEB-INF/web.xml</include>
+							</includes>
+							<filtering>true</filtering>
+						</resource>
+					</webResources>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.eclipse.jetty</groupId>
+				<artifactId>jetty-maven-plugin</artifactId>
+				<version>9.3.3.v20150827</version>
+				<configuration>
+					<webApp>
+						<descriptor>${project.build.directory}/jetty/WEB-INF/web.xml</descriptor>
+						<contextPath>/pyramid-solitaire</contextPath>
+						<extraClasspath>target/classes;../api/target/classes;../web/target/classes</extraClasspath>
+					</webApp>
+					<scanIntervalSeconds>10</scanIntervalSeconds>
+					<scanTargets>
+						<scanTarget>../api/target/classes</scanTarget>
+						<scanTarget>../web/target/classes</scanTarget>
+					</scanTargets>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
