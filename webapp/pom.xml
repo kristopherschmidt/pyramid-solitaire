@@ -12,11 +12,13 @@
 	</parent>
 
 	<dependencies>
+		
 		<dependency>
 			<groupId>com.kschmidt.pyramid-solitaire</groupId>
 			<artifactId>pyramid-solitaire-api</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
+		
 		<dependency>
 			<groupId>com.kschmidt.pyramid-solitaire</groupId>
 			<artifactId>pyramid-solitaire-web</artifactId>
