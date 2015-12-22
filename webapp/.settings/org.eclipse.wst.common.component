@@ -3,13 +3,11 @@
         <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>
         <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/webapp"/>
         <dependent-module archiveName="pyramid-solitaire-api-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/pyramid-solitaire-api/pyramid-solitaire-api">
             <dependency-type>uses</dependency-type>
         </dependent-module>
         <dependent-module archiveName="pyramid-solitaire-web-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/pyramid-solitaire-web/pyramid-solitaire-web">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
-        <dependent-module archiveName="pyramidsol-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/pyramidsol/pyramidsol">
             <dependency-type>uses</dependency-type>
         </dependent-module>
         <property name="context-root" value="pyramid-solitaire-webapp"/>
