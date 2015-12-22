@@ -1,0 +1,14 @@
+
+
+
+find random game computer can't solve
+lay out controls more clearly
+hide deck / remove with back of card? keep control to show deck?
+refactor $.posts to application/json (does it matter?)
+create a spinner while waiting for engine moves
+display engine lines? execute move by selecting line? display only top engine lines?
+engine hint
+different, more appropriate http error when clicked cards don't add to 13?
+
+
+
