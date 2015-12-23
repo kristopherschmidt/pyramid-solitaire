@@ -3,6 +3,8 @@
   	<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
 	<link rel="stylesheet" type="text/css" media="all" href="cards/playingCards.ui.css"/>
 	<link rel="stylesheet" type="text/css" media="all" href="pyramidsol.css"/>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    
     <script type="text/javascript"
     src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
@@ -12,27 +14,35 @@
 
 <body>  
 
-<div id="page-container">
+<div id="page-container" class="container-fluid">
 
-	<div id="controls">
-		Game: <input type="text" id="gameName" value="kswin1" />
-		<button id="loadGame">Load Game</button>
-		<button id="randomGame">New Game</button>
-		<button id="engineMove">Engine Move</button>
-		<button id="undoMove">Undo</button>
-		<button id="undoAllMoves">Undo All</button>
+	<div id="controls" class="row">
+		<div class="col-md-2">
+			Game: <input id="gameName" type="text" value="kswin1" />
+		</div>
+		<button id="loadGame" class="col-md-2">Load Game</button>
+		<button id="randomGame" class="col-md-2">New Game</button>
+		<button id="engineMove" class="col-md-2">Engine Move</button>
+		<button id="undoMove" class="col-md-2">Undo</button>
+		<button id="undoAllMoves" class="col-md-2">Undo All</button>
 	</div>
 
-	<div id="pyramidDisplay"></div>
+	<div id="pyramidAndTalon" class="row">
+		<div id="pyramidDisplay" class="col-md-6"></div>
+		<div id="talonDisplay" class="col-md-6"></div>
+	</div>
 	
-	<div id="talonDisplay"></div>
-
-	<div id="freeCellDisplay"></div>
-
-	<div id="deckDisplay"></div>
+	<div class="row">
+		<div id="deckDisplay" class="col-md-2"></div>
+		<div class="col-md-2">
+			<div class="text-center">
+				<div class="center-block">
+					<div id="freeCellDisplay"></div>
+				</div>
+			</div>
+		<div class="col-md-8"></div>
+	</div>
 	
-
-
 </div>
 
 

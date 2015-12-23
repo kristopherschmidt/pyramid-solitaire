@@ -1,12 +1,8 @@
 html, body {
-	margin: 0;
-	padding: 0;
+	
 }
 
 #page-container {
-	width: 1200px;
-	margin: auto;
-	
 	background-image:url('pyramid.jpg');
 	background-position: center;
 	background-repeat: no-repeat;
@@ -17,29 +13,28 @@ html, body {
 	height: 50px;
 }
 
+#pyramidAndTalon {
+
+}
+
 #pyramidDisplay {
 	height: 450px; 
-	width: 600px;
-	position: relative;
-	float: left;
 }
 
 #talonDisplay {
 	height: 450px;
-	width: 600px;
-	position: relative;
-	float: right;
 }
 
 #freeCellDisplay {
 	height: 200px;
-	clear: both;
+    background-color: #ffffff;
+    border: 1px solid black;
+    opacity: 0.6;
+    filter: alpha(opacity=60); /* For IE8 and earlier */
 }
 
 #deckDisplay {
 	height: 200px;
-	clear: both;
-	position: relative;
 }
 
 .pyramidCard {
