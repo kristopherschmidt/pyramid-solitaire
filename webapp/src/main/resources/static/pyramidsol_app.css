@@ -11,14 +11,10 @@ html, body {
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
-	
-	/* background: red; */
 }
 
 #controls { 
 	height: 50px;
-		
-	/* background: blue; */
 }
 
 #pyramidDisplay {
@@ -26,8 +22,6 @@ html, body {
 	width: 600px;
 	position: relative;
 	float: left;
-	
-	/* 	background: orange; */
 }
 
 #talonDisplay {
@@ -35,21 +29,17 @@ html, body {
 	width: 600px;
 	position: relative;
 	float: right;
-	
-	/* background: purple; */
 }
 
 #freeCellDisplay {
 	height: 200px;
 	clear: both;
-	
 }
 
 #deckDisplay {
 	height: 200px;
 	clear: both;
-	
-	/* background: darkgreen; */
+	position: relative;
 }
 
 .pyramidCard {

@@ -151,10 +151,16 @@
 	
 	var displayDeck = function(data) {
 		$('#deckDisplay').html('');
-    	for (var i = 0; i < data.deck.cards.length; ++i) {
+    	for (var i = 0; i < data.deck.cards.length/3; ++i) {
     		var card = getCard(data.deck.cards[i].name);
         	var el = $('#deckDisplay');
-        	el.append(card.getHTML());
+            //<div style="top: 35px;left: 225px; background-color: blue; height: 50px; width:48px; z-index: 3; position: relative; margin-top: -15px;"> </div>
+        	var cardElement = $('<div style="position: absolute; left: ' + 2*i + 'px; top: ' + 2*i + 'px">'+card.getHTML()+'</div>');
+    		cardElement.find('div.front').hide();
+    		if (i == data.deck.cards.length/3 - 1) {
+    			cardElement.click(deckMove);
+    		}
+        	el.append(cardElement);
     	}
 	}
     
@@ -165,6 +171,10 @@
 		displayFreeCell(board);
 		displayDeck(board);
 	}
+    
+    var deckMove = function () {
+    	$.post(getGameUrl() + "/moves/deckMove", null, refreshGameBoard, "json");   
+    }
     
     $('#loadGame').click(function(){ 
     	$.post(getGameUrl() + "/moves/resetMove", null, refreshGameBoard, "json");   
@@ -178,9 +188,7 @@
     	}, "json");
    	});
     
-    $('#deckMove').click(function(){ 
-        $.post(getGameUrl() + "/moves/deckMove", null, refreshGameBoard, "json");   
-    });
+    $('#deckMove').click(deckMove);
     
     $('#engineMove').click(function(){ 
         $.post(getGameUrl() + "/moves/engineMove", null, refreshGameBoard, "json");   
